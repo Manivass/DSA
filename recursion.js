@@ -239,7 +239,6 @@ console.log(printConsective);
 */
 
 // Print N to 1 
-/*
 let num = 6 ;
 function funcReverse(num){
     if(num===0) return 0 ;
@@ -249,7 +248,7 @@ function funcReverse(num){
 }
 const reverse = funcReverse(num);
 console.log(reverse);
-*/
+
 
 // Sum of 1 to N
 /*
@@ -298,4 +297,39 @@ const palindromeCheck = funcPalindrome(num);
 console.log(palindromeCheck===num);
 */
 
+/*
+let num = 38 ;
+var addDigits = function(num) {
+    let sum = 0 ;
+    while(num!=0){
+        let rev = num % 10 ;
+        sum = sum + rev ;
+        num =Math.floor(num / 10) ;
+    }
+    if(sum<10){
+        return sum ;
+    }
+    return addDigits(sum);
+    
+};
+let singleNum = addDigits(num);
+console.log(singleNum);
+*/
+
+var selfDividingNumbers = function(left, right) {
+    let num1 = 0 ; 
+    let  k = 0 ;
+    for(let i = left ; i <= right ; i++ ){
+        let st = i ;
+        while(st!==0){
+            let rem = st % 10 ;
+            if(i%rem!==0) continue ;
+            st = Math.floor(st / 10 );
+        }
+        if(st===0) num1[k++] = i ;
+    }
+    return num1 ;
+};
+
+console.log(selfDividingNumbers(1,22));
 
