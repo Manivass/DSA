@@ -113,3 +113,50 @@ function funcLastOccurance(nums,target){
 */
 
 // console.log(funcLastOccurance(arr,3));
+
+// Peak Element 
+
+// Brute Force => O(n) => Linear Search 
+
+// const nums = [1 , 2 , 6 , 4 , 5];
+
+/*
+function funcPeakElement(nums){
+    let PeakElementIndex = 0 ;
+    for(let i = 0 ; i < nums.length ; i++ ){
+        if(i === 0 && nums[i] > nums[i+1]){
+            PeakElementIndex = i ;
+        }
+        else if(i === nums.length - 1 && nums[i] > nums[i-1]){
+            PeakElementIndex = i ;
+        }
+        else if(nums[i] > nums[i+1] && nums[i] > nums[i-1]){
+            PeakElementIndex = i ;
+        }
+    }
+    return PeakElementIndex ;
+}
+*/
+
+// Optimized Code  => O(logn) => BinarySearch 
+/*
+function funcPeakElement(nums){
+    let left = 0 ;
+    let right = nums.length - 1 ;
+    while(left < right) {
+        let mid = Math.floor((left+right)/2);
+        if(nums[mid] > nums[mid+1]){
+            right = mid ;
+        }
+        else{
+            left = mid + 1 ;
+        }
+    }
+    return left ;
+}
+*/
+
+// const PeakElement = funcPeakElement(nums);
+// console.log(PeakElement);
+
+
