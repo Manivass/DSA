@@ -39,3 +39,57 @@ for(let i = 0 ; i < nums.length - 1 ; i++ ){
 
 console.log(nums);
 */
+
+
+// Insertion Sorting 
+
+/*
+let nums = [7 , 4 , 3 , 5 , 1 , 2];
+for(let i = 1 ; i < nums.length ; i++ ){
+  let prev = i - 1 ;
+  let current = nums[i];
+  while(nums[prev] > current ){
+    nums[prev + 1 ] = nums[prev];
+    prev-- ;
+  }
+  nums[prev+1] = current ;
+}
+console.log(nums);
+*/
+
+
+// Merge Sort 
+/*
+let nums = [7 , 4 , 3 , 5 , 1 , 2];
+
+function Merge(arr1,arr2){
+  let res = [] ;
+  let i = 0 ;
+  let j = 0 ;
+  while(i<arr1.length && j < arr2.length){
+    if(arr1[i] <= arr2[j]){
+      res.push(arr1[i]);
+      i++;
+    }
+    else 
+    {
+      res.push(arr2[j]);
+      j++;
+    }
+  }
+  return [...res , ...arr1.slice(i) , ...arr2.slice(j)];
+}
+
+function MergeSort(nums){
+  if(nums.length===1) return nums ;
+  let middle = Math.floor(nums.length/2);
+  let left = MergeSort(nums.slice(0,middle));
+  let right = MergeSort(nums.slice(middle));
+  return Merge(left , right );
+}
+
+const sort = MergeSort(nums);
+console.log(sort);
+*/
+
+
